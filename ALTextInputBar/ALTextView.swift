@@ -106,7 +106,7 @@ public class ALTextView: UITextView {
     }
     
     private func commonInit() {
-        isScrollEnabled = false
+        bounces = false
     }
     
     override public func layoutSubviews() {
@@ -135,10 +135,10 @@ public class ALTextView: UITextView {
         
         if roundedHeight >= maxHeight {
             expectedHeight = maxHeight
-            isScrollEnabled = true
+            bounces = true
         } else {
             expectedHeight = roundedHeight
-            isScrollEnabled = false
+            bounces = false
         }
         
         if textViewDelegate != nil {
